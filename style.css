@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(./img/bg.png) no-repeat;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.screen {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.visible {
+    display: flex;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 400;
+    margin: 30px;
+}
+
+.button {
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.26);
+    border: 1px solid #DFDFDF;
+    border-radius: 16px;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 28px;
+    padding: 15px 100px;
+    text-decoration: none;
+    transition: all .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button:active,
+  .button:hover {
+    outline: 0;
+  }
+  
+  .button:hover {
+    background-color: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.19);
+  }
+
+.answer-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap: 15px;
+}
+
+img {
+    max-width: 700px;
+    height: 300px;
+}
+
+.answer {
+    width: 100%;
+}
+
+.answer.active {
+    background-color: #FFFFFF;
+}
+
+.answer.active,
+.answer.right {
+    animation: blink 1s infinite ease-out;
+    border-color: #fff;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: .3;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .button {
+      font-size: 20px;
+      padding: 14px 70px;
+    }
+}
+
+@media (max-width: 680px) {
+    img {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 630px) {
+    .answer-list {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(1, 300px);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 390px) {
+    img {
+        max-width: 350px;
+    }
+
+    .button {
+      font-size: 20px;
+      padding: 14px 50px;
+    }
+}
+
+@media (max-width: 320px) {
+    .heading {
+        font-size: 14px;
+    }
+}
